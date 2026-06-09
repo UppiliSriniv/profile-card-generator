@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #0891b2
+    );
+
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    padding:30px;
+    text-align:center;
+}
+
+h1{
+    color:white;
+    margin-bottom:25px;
+}
+
+form{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+
+    padding:25px;
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:100px;
+}
+
+button{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00e676;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.profile-card{
+    margin-top:30px;
+
+    background:white;
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+    animation:fadeIn 0.8s ease;
+}
+
+.profile-card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #667eea;
+}
+
+.profile-card h2{
+    margin-top:15px;
+    color:#333;
+}
+
+.profile-card h3{
+    color:#667eea;
+    margin:10px 0;
+}
+
+.profile-card p{
+    color:#555;
+    margin:15px 0;
+}
+
+.skills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skills span{
+    background:#667eea;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}

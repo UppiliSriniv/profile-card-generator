@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile Card Generator</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>User Profile Card Generator</h1>
+
+    <form action="/generate" method="POST">
+
+        <input
+        type="text"
+        name="name"
+        placeholder="Enter Name"
+        required>
+
+        <input
+        type="text"
+        name="role"
+        placeholder="Enter Role"
+        required>
+
+        <textarea
+        name="bio"
+        placeholder="Write Short Bio"
+        required></textarea>
+
+        <input
+        type="text"
+        name="skills"
+        placeholder="Enter your skills. e.g. Python, Flask, HTML, CSS"
+        required>
+
+        <input
+        type="url"
+        name="image"
+        placeholder="Paste Image URL"
+        required>
+
+        <button type="submit">
+            Generate Profile
+        </button>
+
+    </form>
+
+    {% if generated %}
+
+    <div class="profile-card">
+
+        <img src="{{ image }}" alt="Profile">
+
+        <h2>{{ name }}</h2>
+
+        <h3>{{ role }}</h3>
+
+        <p>{{ bio }}</p>
+
+        <div class="skills">
+
+            {% for skill in skills.split(',') %}
+                <span>{{ skill }}</span>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
